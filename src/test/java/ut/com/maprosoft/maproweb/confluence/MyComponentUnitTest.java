@@ -1,8 +1,8 @@
-package ut.com.maprosoft.confluence;
+package ut.com.maprosoft.maproweb.confluence;
 
 import org.junit.Test;
-import com.maprosoft.confluence.MyPluginComponent;
-import com.maprosoft.confluence.MyPluginComponentImpl;
+import com.maprosoft.maproweb.confluence.MyPluginComponent;
+import com.maprosoft.maproweb.confluence.MyPluginComponentImpl;
 
 import static org.junit.Assert.assertEquals;
 

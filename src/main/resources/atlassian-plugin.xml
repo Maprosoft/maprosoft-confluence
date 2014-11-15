@@ -1,32 +1,154 @@
 <atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
-    <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}" />
-        <param name="plugin-icon">images/pluginIcon.png</param>
-        <param name="plugin-logo">images/pluginLogo.png</param>
-    </plugin-info>
+	<plugin-info>
+		<description>${project.description}</description>
+		<version>${project.version}</version>
+		<vendor name="${project.organization.name}" url="${project.organization.url}" />
+		<param name="plugin-icon">images/pluginIcon.png</param>
+		<param name="plugin-logo">images/pluginLogo.png</param>
+	</plugin-info>
+	
+	<!-- add our i18n resource -->
+	<resource type="i18n" name="i18n" location="maproweb-confluence-macro"/>
+	<resource type="download" name="images/" location="/images"/>
+	
+	<!-- add our web resources -->
+	<web-resource key="maproweb-confluence-macro-resources" name="maproweb-confluence-macro Web Resources">
+		<dependency>com.atlassian.auiplugin:ajs</dependency>
+		
+		<resource type="download" name="maproweb-confluence-macro.css" location="/css/maproweb-confluence-macro.css"/>
+		<resource type="download" name="cmsText.css" location="/css/cmsText.css"/>
+		<resource type="download" name="prettyPhoto.css" location="/css/prettyPhoto.css"/>
+		<resource type="download" name="maproweb-confluence-macro.js" location="/js/maproweb-confluence-macro.js"/>
+		<!--
+		<resource type="download" name="jquery.mapPopup.js" location="/js/jquery.mapPopup.js"/>
+		-->
+		<resource type="download" name="mapPopup.js" location="/js/mapPopup.js"/>
+		
+		<!--
+		<context>atl.general</context>
+		<context>space</context>
+		-->
+        <context>page</context>
+		
+		<!--
+		<context>maproweb-confluence-macro</context>
+		-->
+	</web-resource>
+	
+	<!-- publish our component -->
+	<!--	
+	<component key="myPluginComponent" class="com.maprosoft.maproweb.confluence.MyPluginComponentImpl" public="true">
+		<interface>com.maprosoft.maproweb.confluence.MyPluginComponent</interface>
+	</component>i
+	-->
+	
+	<!-- import from the product container -->
+	<component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
+	
+	    <!--
+		<web-resource key="editorWebResource" name="Editor Web Resource">
+		<context>editor</context>
+    	<dependency>com.atlassian.confluence.tinymceplugin:editor-resources</dependency>
+    	<resource
+    	    	type="download"
+    	    	name="maproweb-confluence-macro.css"
+    	    	location="${project.artifactId}/css/maproweb-confluence-macro.css"
+    	    	location-dud="/download/resources/${project.groupId}.${project.artifactId}/css/maproweb-confluence-macro.css"/>
+	</web-resource>
+    	-->
+	
+	<web-item 
+	    	name="menu-link"
+	    	class="com.maprosoft.maproweb.confluence.AddMap"
+	    	key="add-maproweb-map-map-web-item"
+	    	section="system.editor.featured.macros.default"
+	    	weight="11">
+    	<description>Displays an insert box macro link in the tinymce insert menu </description>
+    	<label key="com.maprosoft.maproweb.confluence.maproweb.label">Maproweb</label>
+    	<link linkId="add-maproweb-map"/>
+	</web-item>
 
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="maprosoft-confluence"/>
-    
-    <!-- add our web resources -->
-    <web-resource key="maprosoft-confluence-resources" name="maprosoft-confluence Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        
-        <resource type="download" name="maprosoft-confluence.css" location="/css/maprosoft-confluence.css"/>
-        <resource type="download" name="maprosoft-confluence.js" location="/js/maprosoft-confluence.js"/>
-        <resource type="download" name="images/" location="/images"/>
+	<xhtml-macro
+	    	key="add-maproweb-map"
+	    	name="add-maproweb-map"
+	    	name-old="maproweb-confluence-macro"
+			class="com.maprosoft.maproweb.confluence.AddMap"
+		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png">
+    	<description>Description of My Macro goes here</description>
+		<category name="external-content"/>
+		<parameters>
+			<parameter name="site" type="enum">
+				<value name="http://maps.marrickville.nsw.gov.au/maproweb/" />
+				<value name="http://www.maprosoft.com/maproweb-demo/" />
+			</parameter>
+		    <parameter name="url" type="string"/>
+			<parameter name="mapApi" type="enum">
+				<value name="GoogleMaps" />
+				<value name="MapQuest" />
+			</parameter>
+			<parameter name="showMapToolbar" type="boolean" default="false"/>
+			<parameter name="showStackToolbar" type="boolean" default="false"/>
+			<parameter name="showAllFeatureTypes" type="boolean" default="false"/>
+			<parameter name="showFeatureTypes" type="string" multiple="true"/>
+			<parameter name="width" type="string" />
+			<parameter name="height" type="string" />
+		</parameters>
+		<resource type="velocity" name="help" location="templates/extra/layout/maproweb-macro-help.vm">
+	        <param name="help-section" value="advanced"/>
+	    </resource>
+	</xhtml-macro>
 
-        <context>maprosoft-confluence</context>
-    </web-resource>
-    
-    <!-- publish our component -->
-    <component key="myPluginComponent" class="com.maprosoft.confluence.MyPluginComponentImpl" public="true">
-        <interface>com.maprosoft.confluence.MyPluginComponent</interface>
-    </component>
-    
-    <!-- import from the product container -->
-    <component-import key="applicationProperties" interface="com.atlassian.sal.api.ApplicationProperties" />
-    
+	<xhtml-macro
+	    	key="add-popup-maproweb-map-link"
+	    	name="add-popup-maproweb-map-link"
+	    	name-old="maproweb-confluence-macro"
+			class="com.maprosoft.maproweb.confluence.AddPopupMapLink"
+		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png" >
+    	<description>Description of My Macro goes here</description>
+		<category name="external-content"/>
+		<parameters>
+			<parameter name="site" type="enum">
+				<value name="http://maps.marrickville.nsw.gov.au/maproweb/" />
+				<value name="http://www.maprosoft.com/maproweb-demo/" />
+			</parameter>
+		    <parameter name="url" type="string"/>
+			<parameter name="mapApi" type="enum">
+				<value name="GoogleMaps" />
+				<value name="MapQuest" />
+			</parameter>
+			<parameter name="focusFeatureType" type="string"/>
+			<parameter name="focusFeatureKey" type="string"/>
+			<parameter name="tooltip" type="string"/>
+			<parameter name="focusAction" type="enum">
+				<value name="info-window" />
+				<value name="driving-directions" />
+				<value name="bicycling-directions" />
+				<value name="walking-directions" />
+				<value name="street-view" />
+				<value name="tour" />
+			</parameter>
+		</parameters>
+		<resource type="velocity" name="help" location="templates/extra/layout/maproweb-macro-help.vm">
+	        <param name="help-section" value="advanced"/>
+	    </resource>
+	</xhtml-macro>
+		
+	
+	<xhtml-macro
+	    	key="add-maproweb-map-gallery"
+	    	name="add-maproweb-map-gallery"
+			class="com.maprosoft.maproweb.confluence.AddMapGallery"
+		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png">
+    	<description>Description of My Macro goes here</description>
+		<category name="external-content"/>
+		<parameters>
+		    <parameter name="url" type="string"/>
+			<parameter name="width" type="string" />
+			<parameter name="height" type="string" />
+			</parameters>
+		<resource type="velocity" name="help" location="templates/extra/layout/maproweb-macro-help.vm">
+	        <param name="help-section" value="advanced"/>
+	    </resource>
+	</xhtml-macro>
+
 </atlassian-plugin>

@@ -1,4 +1,4 @@
-package com.maprosoft.confluence;
+package com.maprosoft.maproweb.confluence;
 
 public interface MyPluginComponent
 {

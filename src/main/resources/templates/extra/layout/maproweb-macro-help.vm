@@ -1,0 +1,37 @@
+<tr bgcolor=ffffff>
+	<!-- The left-hand table cell should contain usage examples -->
+	<td>
+		{maproweb-confluence-macro:title=Be Careful}<br />
+		The body of the note here..<br />
+		{maproweb-confluence-macro}
+	</td>
+ 
+	<!-- The right-hand cell describes the macro and its available arguments -->
+	<!-- and may include sample output -->
+	<td>
+	<p>
+		Prints a simple note to the user.
+ 
+	<!-- Provide a list of all possible macro arguments -->
+	<ul>
+		<li><b>title:</b> - (optional) the title of the note.</li>
+		<li><b>icon:</b> - (optional) if "false", don't display the icon.</li>
+	</ul>
+	</p>
+ 
+	<!-- This is the sample output -->
+	<div align='center'><div class='informationMacroPadding'>
+		<table cellpadding='5' width='85%' cellspacing='0' class='noteMacro' border='0'>
+			<tr>
+				<td width='16' valign='top'>
+				<img src="$req.contextPath/images/icons/emoticons/warning.png" width="16"
+	 				height="16" align="absmiddle" alt="" border="0"></td><td>
+	 			<b class="strong">Be Careful</b><br /><br/>
+	 			The body of the note here.. $req.contextPath/images/icons/emoticons/warning.png
+	 			</td>
+	 		</tr>
+	 	</table>
+	 	</div>
+	 	</div>
+	</td>
+</tr>

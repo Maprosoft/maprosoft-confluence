@@ -5,7 +5,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.maprosoft.confluence</groupId>
+    <groupId>com.maprosoft.maproweb.confluence</groupId>
     <artifactId>maprosoft-confluence</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -15,7 +15,7 @@
     </organization>
 
     <name>maprosoft-confluence</name>
-    <description>This is the com.maprosoft.confluence:maprosoft-confluence plugin for Atlassian Confluence.</description>
+    <description>This is the com.maprosoft.maproweb.confluence:maprosoft-confluence plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>

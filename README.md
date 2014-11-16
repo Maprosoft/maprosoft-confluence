@@ -5,6 +5,8 @@ maprosoft-confluence
 
 This add-on provides integration between Confluence and Maprosoft's products - [Maproweb](http://www.maprosoft.com/maproweb.html), [Maproapp](http://www.maprosoft.com/maproapp.html) and [Maproissue](http://www.maprosoft.com/maproissue.html).
 
+Currently the add-on provides macros to enable maps to be easily added to Confluence pages. Further integrations and enhancements are planned.
+
 # Running
 
 Install Atlassian's Plugin SDK as per the instructions on their website:

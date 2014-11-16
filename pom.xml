@@ -7,11 +7,11 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.maprosoft.maproweb.confluence</groupId>
     <artifactId>maprosoft-confluence</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Maprosoft</name>
+        <url>http://www.maprosoft.com/</url>
     </organization>
 
     <name>maprosoft-confluence</name>

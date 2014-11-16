@@ -44,20 +44,6 @@ public class AddMap implements MaprowebAtlasConstants, Macro {
 		}
 
 		StringBuilder builder = new StringBuilder();
-//		builder.append("<p>\n");
-//		if (macros.isEmpty()) {
-//			builder.append("You've done built yourself a macro! Nice work!\n");
-//		} else {
-//			builder.append("<table width=\"50%\">\n");
-//			builder.append("<tr><th>Macro Name</th><th>Has Body?</th></tr>\n");
-//			for (MacroDefinition defn : macros) {
-//				builder.append("<tr>");
-//				builder.append("<td>").append(defn.getName()).append("</td><td>").append(defn.hasBody()).append("</td>\n");
-//				builder.append("</tr>");
-//			}
-//			builder.append("</table>\n");
-//		}
-//		builder.append("</p>\n");
 		
 		String url = parameters.get("url");
 		
@@ -83,8 +69,6 @@ public class AddMap implements MaprowebAtlasConstants, Macro {
 			}
 			iframeUrl.append(url);
 			
-//			String nextSeparator  = "?";
-			
 			AtomicReference<String> nextSeparator = new AtomicReference<String>("?");
 			if (mapApi != null) {
 				MaprowebAtlasUtil.addParameter("mapApi", mapApi, iframeUrl, nextSeparator, AMP);
@@ -94,16 +78,6 @@ public class AddMap implements MaprowebAtlasConstants, Macro {
 			MaprowebAtlasUtil.addParameter("showAllFeatureTypes", showAllFeatureTypes, iframeUrl, nextSeparator, AMP);
 			MaprowebAtlasUtil.addParameter("showFeatureTypes", showFeatureTypes, iframeUrl, nextSeparator, AMP);
 			
-			// showMapToolbar=no&amp;showAllFeatureTypes=no&amp;
-			
-//			if (featureType != null) {
-//				iframeUrl.append(nextSeparator);
-//				iframeUrl.append("showFeatureTypes");
-//				iframeUrl.append("=");
-//				iframeUrl.append(featureType);
-//				nextSeparator = AMP;
-//			}
-
 			// https://developer.mozilla.org/en/docs/Web/HTML/Element/iframe
 			builder.append("<iframe src=\"").append(iframeUrl.toString()).append("\"\n");
 			builder.append(" width=\"").append(width).append("\"\n");

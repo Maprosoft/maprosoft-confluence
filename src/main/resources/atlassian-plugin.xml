@@ -107,10 +107,12 @@
     	<description>Description of My Macro goes here</description>
 		<category name="external-content"/>
 		<parameters>
+			<!--
 			<parameter name="site" type="enum">
 				<value name="http://maps.marrickville.nsw.gov.au/maproweb/" />
 				<value name="http://www.maprosoft.com/maproweb-demo/" />
 			</parameter>
+			-->
 		    <parameter name="url" type="string"/>
 			<parameter name="mapApi" type="enum">
 				<value name="GoogleMaps" />

@@ -1,6 +1,12 @@
 maprosoft-confluence
 ====================
 
+# Introduction
+
+This add-on provides integration between Confluence and Maprosoft's products - [Maproweb](http://www.maprosoft.com/maproweb.html), [Maproapp](http://www.maprosoft.com/maproapp.html) and [Maproissue](http://www.maprosoft.com/maproissue.html).
+
+# Running
+
 You have successfully created an Atlassian Plugin!
 
 Here are the SDK commands you'll use immediately:
@@ -14,3 +20,7 @@ Here are the SDK commands you'll use immediately:
 Full documentation is always available at:
 
 https://developer.atlassian.com/display/DOCS/Introduction+to+the+Atlassian+Plugin+SDK
+
+# Support
+
+for support, please [contact Maprosoft](http://www.maprosoft.com/contact.html).

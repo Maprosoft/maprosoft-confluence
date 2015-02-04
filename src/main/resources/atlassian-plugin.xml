@@ -74,7 +74,11 @@
 	    	name-old="maproweb-confluence-macro"
 			class="com.maprosoft.maproweb.confluence.AddMap"
 		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png">
-    	<description>Description of My Macro goes here</description>
+    	<description>
+    	    <![CDATA[
+    	    Confused? See the <a href="https://github.com/Maprosoft/maprosoft-confluence" target="_blank">online help</a>.
+    		]]>
+    	</description>
 		<category name="external-content"/>
 		<parameters>
 			<parameter name="site" type="enum">
@@ -104,7 +108,11 @@
 	    	name-old="maproweb-confluence-macro"
 			class="com.maprosoft.maproweb.confluence.AddPopupMapLink"
 		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png" >
-    	<description>Description of My Macro goes here</description>
+    	<description>
+    	    <![CDATA[
+    	    Confused? See the <a href="https://github.com/Maprosoft/maprosoft-confluence" target="_blank">online help</a>.
+    		]]>
+    	</description>
 		<category name="external-content"/>
 		<parameters>
 			<!--
@@ -141,7 +149,11 @@
 	    	name="add-maproweb-map-gallery"
 			class="com.maprosoft.maproweb.confluence.AddMapGallery"
 		   	icon="/download/resources/${project.groupId}.${project.artifactId}/images/Maprosoft-logo-no-text-901x846.png">
-    	<description>Description of My Macro goes here</description>
+    	<description>
+    	    <![CDATA[
+    	    Confused? See the <a href="https://github.com/Maprosoft/maprosoft-confluence" target="_blank">online help</a>.
+    		]]>
+    	</description>
 		<category name="external-content"/>
 		<parameters>
 		    <parameter name="url" type="string"/>

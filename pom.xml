@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.maprosoft.maproweb.confluence</groupId>
     <artifactId>maprosoft-confluence</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>${project.version}</version>
 
     <organization>
         <name>Maprosoft</name>
@@ -20,15 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
             <groupId>com.atlassian.confluence</groupId>
             <artifactId>confluence</artifactId>
-            <version>${confluence.version}</version>
+            <version>[${confluence.version},)</version>
             <scope>provided</scope>
         </dependency>
 
@@ -37,6 +31,12 @@
             <groupId>com.atlassian.plugins</groupId>
             <artifactId>atlassian-plugins-osgi-testrunner</artifactId>
             <version>${plugin.testrunner.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -75,6 +75,7 @@
     </build>
 
     <properties>
+        <project.version>1.0.2-SNAPSHOT</project.version>
         <confluence.version>5.6.4</confluence.version>
         <confluence.data.version>5.6.4</confluence.data.version>
         <amps.version>5.0.4</amps.version>

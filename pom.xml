@@ -8,15 +8,14 @@
     <groupId>com.maprosoft.maproweb.confluence</groupId>
     <artifactId>maprosoft-confluence</artifactId>
     <version>${project.version}</version>
-
+    
+    <name>${project.name}</name>
+    <description>${project.description}</description>
+    <packaging>atlassian-plugin</packaging>
     <organization>
         <name>Maprosoft</name>
         <url>http://www.maprosoft.com/</url>
     </organization>
-
-    <name>maprosoft-confluence</name>
-    <description>This is the com.maprosoft.maproweb.confluence:maprosoft-confluence plugin for Atlassian Confluence.</description>
-    <packaging>atlassian-plugin</packaging>
 
     <dependencies>
         <dependency>
@@ -75,9 +74,13 @@
     </build>
 
     <properties>
-        <project.version>1.0.2-SNAPSHOT</project.version>
-        <confluence.version>5.6.4</confluence.version>
-        <confluence.data.version>5.6.4</confluence.data.version>
+        <project.organization.name>Maprosoft</project.organization.name>
+        <project.organization.url>http://www.maprosoft.com/</project.organization.url>
+        <project.name>maprosoft-confluence</project.name>
+        <project.description>This is the com.maprosoft.maproweb.confluence:maprosoft-confluence plugin for Atlassian Confluence.</project.description>
+        <project.version>1.0.3-SNAPSHOT</project.version>
+        <confluence.version>5.7-OD-43-014</confluence.version>
+        <confluence.data.version>5.7-OD-43-014</confluence.data.version>
         <amps.version>5.0.4</amps.version>
         <plugin.testrunner.version>1.2.0</plugin.testrunner.version>
     </properties>

@@ -47,7 +47,7 @@ public class AddPopupMapLink implements MaprowebAtlasConstants, Macro {
 		StringBuilder builder = new StringBuilder();
 		List<String> errorMessages = new LinkedList<String>();
 		
-		String url = parameters.get("url");
+		String url = parameters.get("maproweb-url");
 		
 		if (MaprowebAtlasUtil.isNil(url)) {
 			url = MaprowebAtlasUtil.getParameter("site", parameters, null);

@@ -38,7 +38,7 @@ The 'Add Map' macro allows a [Maproweb](http://www.maprosoft.com/maproweb.html) 
 
 Fill in the macro fields as follows:
 
-* url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
+* maproweb-url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
 * mapApi: Select the type of map system to use - GoogleMaps or MapQuest.
 * showMapToolbar: Indicates whether to show a toolbar allowing the control of certain features. [More info](http://www.maprosoft.com/api-reference.html#showMapToolbar).
 * showStackToolbar: This only has effect if showMapToolbar is true. If this is set to true, then the 'Stack Toolbar' will be chosen, otherwise a regular toolbar will be chosen. [More info](http://www.maprosoft.com/api-reference.html#showStackToolbar).
@@ -54,7 +54,7 @@ The 'Add Map Popup' macro allows a link to be created that, when clicked, result
 
 Fill in the macro fields as follows:
 
-* url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
+* maproweb-url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
 * mapApi: Select the type of map system to use - GoogleMaps or MapQuest.
 * tooltip: A tooltip to display when the cursor hovers over the link. [More info](http://www.maprosoft.com/api-reference.html#tooltip).
 * focusFeatureType: If the map should initially focus on an item within it, then this parameter specifies the type of the feature. [More info](http://www.maprosoft.com/api-reference.html#focusFeatureType).
@@ -68,7 +68,7 @@ The 'Add Map Gallery' macro allows a [Maproweb map gallery](http://www.maprosoft
 
 Fill in the macro fields as follows:
 
-* url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
+* maproweb-url: This is the URL where [Maproweb](http://www.maprosoft.com/maproweb.html) is running.
 * width: the width of the map gallery. Use HTML notation (e.g. 600px, 100%).
 * height: the height of the map gallery. Use HTML notation.
 

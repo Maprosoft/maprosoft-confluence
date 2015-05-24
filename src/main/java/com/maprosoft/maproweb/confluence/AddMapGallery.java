@@ -46,7 +46,7 @@ public class AddMapGallery implements MaprowebAtlasConstants, Macro {
 
 		StringBuilder builder = new StringBuilder();
 		
-		String url = parameters.get("url");
+		String url = parameters.get("maproweb-url");
 		
 		if (url == null || url.length() == 0) {
 			builder.append("A URL must be provided");
